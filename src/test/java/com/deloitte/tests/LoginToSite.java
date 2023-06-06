@@ -9,11 +9,19 @@ public class LoginToSite extends CommonMethods{
     @Test
     public void login() throws Exception
     {
-        CommonMethods commonMethods = new CommonMethods();
-        //LoginObjects logObj = new LoginObjects(dr);
-        commonMethods.launchUrl();
-        commonMethods.CancelAds();
-        driver.close();
+
+        try {
+            CommonMethods commonMethods = new CommonMethods();
+            //LoginObjects logObj = new LoginObjects(dr);
+            commonMethods.launchUrl();
+            commonMethods.CancelAds();
+
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        finally{
+            driver.close();
+        }
 
     }
 
